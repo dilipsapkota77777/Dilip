@@ -1,0 +1,71 @@
+business:
+  name: DGK Business Consultancy
+  website: https://dgkbusinessconsultancy-com-au.lovable.app/
+  location: Darwin, Australia (national reach)
+  founded_approx: 2024 # ~10 months of operation, 20+ clients
+  model: Done-With-You (client owns the system at the end, no agency dependency)
+  tagline: "The issue isn't effort. It's the infrastructure that was missing behind it."
+
+services:
+  - name: Foundation Plan
+    description: CRM, website/funnel, automation, tracking, SEO, sales process
+  - name: Outbound Lead Gen
+    description: Email infrastructure, signal-based list building (Clay + Apollo), automated sequences across email, LinkedIn, phone
+  - name: Content System
+    description: Daily content across 6 platforms without founder involvement
+  - name: LinkedIn Ads
+    description: Awareness/consideration/conversion structure with full revenue attribution
+
+icp:
+  titles:
+    - CEO
+    - Founder
+    - Managing Director
+    - Operations Manager
+    - Head of Marketing
+  industries:
+    - IT / MSP
+    - Accounting
+    - NDIS
+    - Legal
+    - Financial Planning
+    - Construction
+    - Recruitment
+  headcount_range: 3–59
+  revenue_range: $200k–$10M AUD
+  geography: Australia only
+  hard_filters:
+    - Must be Australian business
+    - Must be B2B
+  excluded:
+    - B2C businesses
+    - Solopreneurs (under 3 employees)
+    - Enterprise (60+ employees)
+
+pain_points:
+  - Pipeline that dies when referrals dry up (feast/famine, unpredictable revenue)
+  - Marketing hires that underperform because no system exists for them to plug into
+  - Content that stops the moment the founder gets busy
+
+proof_points:
+  - "0 → 6 qualified enquiries/month in 60 days (IT services)"
+  - "Marketing hire ramped in 3 weeks vs 3+ months (accounting)"
+  - "Daily content across 6 platforms, owner not writing a word (NDIS)"
+  - "CPL down 62% in Q1 (legal)"
+  - "Full system handover in 12 weeks, no retainer needed (recruitment)"
+  - "Same-week outreach triggered by hiring signals on SEEK (financial planning)"
+
+differentiators:
+  - Done-With-You (not done-for-you agency, not DIY course)
+  - Client owns the full system at handover — no lock-in
+  - Signal-based outbound (SEEK hiring signals, LinkedIn intent)
+  - 20+ clients across 7 industries in 10 months
+
+lead_magnet: Pipeline Audit Call (30-min, diagnose their pipeline gap live — see lead-magnets.md)
+
+infrastructure_status:
+  domains_purchased: yes
+  inboxes_warmed_2_weeks: yes
+  smartlead_api_key: yes
+  prospeo_api_key: yes
+  millionverifier_api_key: yes
