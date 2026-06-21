@@ -13,13 +13,27 @@ offer:
   primary_cta_opener: "Reply and I'll send you our broker referral overview (1-pager)"
   primary_cta_followup: "Book a 15-min call — no obligation, just see if there's a fit"
   lead_magnet_agents: >
-    Free 24-hour client pre-qualification — send us your buyer,
-    we'll tell you if they can get finance within 24 hours at no cost
+    Free 24-hour client pre-qualification — send us your buyer's basic details
+    (income, deposit, purchase price) and we'll tell you if they can get finance
+    within 24 hours at no cost
+  lead_magnet_agents_cta: >
+    "Send me your next buyer's basic details — I'll tell you if they can get
+    finance within 24 hours. No call needed, no cost to you."
   lead_magnet_accountants: >
+    SMSF Property Loan Explainer — short guide covering what SMSF members can
+    borrow for, common LRBA mistakes, and when to refer to a specialist broker
+  lead_magnet_accountants_cta: >
+    "Reply and I'll send you our SMSF lending explainer — covers what your SMSF
+    clients can borrow for and the 3 mistakes that get LRBA loans declined. Free,
+    no strings."
+  lead_magnet_fallback: >
     Broker Referral 1-Pager — lender panel (40+ lenders), turnaround times,
     and referral arrangement overview at a glance
+  lead_magnet_fallback_cta: >
+    "Reply and I'll send you our broker overview — lender panel, turnaround times,
+    and how the referral arrangement works. One page, 60 seconds to read."
   lead_magnet_followup_accountants: >
-    Referral fee structure document (email #2 or #3 only, not opener)
+    Referral fee structure document (email #3 only, not opener)
   value_prop: >
     Referral partners get fast pre-quals, a wide lender panel, and a broker
     who handles multicultural and first-home buyer clients with care —
