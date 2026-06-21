@@ -1,0 +1,157 @@
+business:
+  name: IT Together
+  website: https://ittogether.com.au/
+  one_liner: >
+    We provide small and medium Australian businesses with managed IT support,
+    cybersecurity, and cloud services — so they get enterprise-grade IT without
+    hiring a full-time team.
+  tone_business_owners: peer-to-peer casual
+  tone_it_managers_education: warm professional
+  location: Sydney (primary), Australia-wide
+  unique_angle: >
+    Australian-based support team, no lock-in enterprise contracts,
+    SMB-focused with fast response times
+
+services:
+  - Managed IT Support
+  - Cybersecurity
+  - Cloud Services (Microsoft 365 / Azure)
+  - Print & Document Management
+  - IT Training & Robotic Process Automation
+  - Database Migration
+
+offer:
+  lead_magnets:
+    seek_hiring_signal:
+      name: Hiring vs MSP Cost Calculator
+      description: >
+        Personalised estimate showing cost of 1 full-time IT hire in Sydney
+        (salary + super + recruitment + downtime) vs IT Together monthly fee
+      cta: >
+        "Reply and I'll send you the actual numbers — most businesses save
+        40–60% vs hiring in-house."
+    cybersecurity_no_it_provider:
+      name: Free Cybersecurity / Dark Web Risk Scan
+      description: >
+        Automated scan of their business domain showing exposed credentials,
+        email security gaps (SPF/DKIM), and dark web exposure
+      cta: >
+        "Reply with your business domain and I'll run a free cybersecurity
+        scan — takes 2 minutes, results back within 24 hours."
+    broad_all_industries:
+      name: Free IT Health Check
+      description: >
+        Review of their current IT setup — email security, patch status,
+        backup coverage, MFA adoption — returned as a one-page report
+      cta: >
+        "Reply and I'll send you a free IT health check report for your
+        business. No commitment, no sales call required."
+    operations_manager_angle:
+      name: IT Downtime Cost Calculator
+      description: >
+        Simple calculator personalised with their team size and hourly rate
+        showing what 1 hour of IT downtime costs their business
+      cta: >
+        "Reply with your team size and I'll send back a personalised
+        downtime cost estimate — most SMBs are shocked by the number."
+    followup_email_2_3:
+      name: Free 30-min IT Strategy Session
+      description: >
+        Screen-share where IT Together reviews their current setup and
+        flags the top 3 risks — no pitch, just an honest assessment
+      cta: >
+        "Worth a 30-min screen share? I'll review your current setup and
+        flag the top 3 risks — no obligation."
+
+icp_hard_filters:
+  job_titles:
+    - Business Owner
+    - Director
+    - Managing Director
+    - CEO
+    - Founder
+    - Operations Manager
+    - Office Manager
+    - Practice Manager
+    - IT Manager
+    - Head of IT
+    - IT Coordinator
+    - IT Administrator
+    - Principal (schools/education)
+    - School Business Manager
+  industries_in:
+    - All industries
+    - Accounting / Finance
+    - Legal
+    - Healthcare / Medical / Allied Health
+    - Construction / Engineering
+    - NDIS / Disability Services
+    - Real Estate
+    - Professional Services
+    - Manufacturing / Trades
+    - Education (schools, colleges, universities, TAFEs)
+  industries_out:
+    - Competitor MSPs / IT companies
+  headcount_min: 5
+  headcount_max: 100
+  countries:
+    - AU
+  geography_priority:
+    - Greater Sydney (primary)
+    - Melbourne, Brisbane, Perth (secondary)
+  excluded_domains: []  # add existing clients + competitors as discovered
+  excluded_criteria:
+    - Already has a named MSP / IT provider on their website
+    - Enterprise with dedicated internal IT department (100+)
+    - Government agencies (long tender cycles — flag separately for AusTender)
+    - Competitor MSPs
+
+icp_soft_preferences:
+  triggers:
+    - seek_job_posting_it_support_helpdesk_admin    # trying to hire IT internally — best signal
+    - recent_cybersecurity_incident_news_mention     # live pain, urgent
+    - no_it_provider_on_website                      # unmanaged, gap to fill
+    - fast_growth_multiple_seek_job_postings         # outgrowing informal IT
+    - microsoft365_azure_detected_on_website         # already in IT Together stack
+    - new_office_opened_or_moved                     # new infrastructure needs
+    - new_ceo_ops_manager_practice_manager_linkedin  # new decision-maker reviewing vendors
+    - negative_google_reviews_mentioning_tech_issues # pain is public
+    - school_college_it_tender_austender             # education procurement signal
+  personas_to_prioritize:
+    - Business owner with 10–50 staff, no IT person, running M365
+    - Operations/office manager frustrated by repeated IT issues
+    - School or college business manager with aging infrastructure
+    - Fast-growing SMB posting multiple roles on SEEK simultaneously
+
+legal:
+  regulated_industry: false
+  certifications_held: none
+  trust_signals_approved:
+    - "Australian-based support team"
+    - "We respond within [X] hours" (use only if SLA is real and documented)
+    - "Supporting Australian SMBs since [year]"
+  banned_words:
+    - guaranteed uptime
+    - 100% uptime
+    - cheapest IT support
+    - lowest price
+    - we'll fix all your IT problems
+    - government-certified
+    - IRAP certified (not held)
+    - ISO 27001 certified (not held)
+  banned_claims:
+    - Any specific pricing in cold email (quote properly, not in outreach)
+    - Unsubstantiatable uptime or response time guarantees
+  compliance_notes:
+    - Include working unsubscribe link on every email (Australian Spam Act 2003)
+    - Do not mention data sourcing method in email body
+    - B2B cold email to businesses is permitted under AU Spam Act (consent inferred for business contacts)
+
+infrastructure_status:
+  domains_purchased: yes
+  inboxes_warmed_2_weeks: yes
+  smartlead_api_key: yes
+  prospeo_api_key: yes
+  millionverifier_api_key: yes
+
+created_at: 2026-06-21
