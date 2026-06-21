@@ -1,0 +1,147 @@
+business:
+  name: Laxmi Home Loans
+  website: https://www.mortgagepros.com.au/
+  one_liner: >
+    We help homebuyers, investors, and refinancers across Australia secure the
+    right home loan with competitive rates and expert guidance — with bilingual
+    support in English and Nepali.
+  tone: peer-to-peer casual
+  location: Australia (national)
+  unique_angle: Bilingual English/Nepali mortgage brokerage with multicultural focus
+
+offer:
+  primary_cta_opener: "Reply and I'll send you our broker referral overview (1-pager)"
+  primary_cta_followup: "Book a 15-min call — no obligation, just see if there's a fit"
+  lead_magnet_agents: >
+    Free 24-hour client pre-qualification — send us your buyer,
+    we'll tell you if they can get finance within 24 hours at no cost
+  lead_magnet_accountants: >
+    Broker Referral 1-Pager — lender panel (40+ lenders), turnaround times,
+    and referral arrangement overview at a glance
+  lead_magnet_followup_accountants: >
+    Referral fee structure document (email #2 or #3 only, not opener)
+  value_prop: >
+    Referral partners get fast pre-quals, a wide lender panel, and a broker
+    who handles multicultural and first-home buyer clients with care —
+    so agents and accountants look good to their clients without doing extra work
+
+campaign_tracks:
+  - id: track_a
+    name: Real Estate Agent Referral Partners
+    hook: Free 24-hour buyer pre-qualification
+    sequence:
+      email_1: Intro + pre-qual offer
+      email_2: Follow-up — book 15-min call
+      email_3: Social proof / case study + soft close
+
+  - id: track_b
+    name: Accountant & Financial Planner Referral Partners
+    hook: Broker Referral 1-Pager
+    sequence:
+      email_1: Intro + 1-pager offer
+      email_2: Referral fee structure doc
+      email_3: Book 15-min call
+
+icp_hard_filters:
+  job_titles:
+    - Real Estate Agent
+    - Sales Agent
+    - Buyer's Agent
+    - Principal
+    - Director (real estate agency)
+    - Accountant
+    - Tax Agent
+    - CPA
+    - Financial Planner
+    - Financial Adviser
+    - Senior Accountant
+    - Managing Partner (accounting)
+  industries_in:
+    - Real Estate
+    - Accounting
+    - Financial Services
+  industries_out:
+    - Banking
+    - Insurance
+    - Mortgage Brokers
+    - Loan Brokers
+  headcount_min: 1
+  headcount_max: 50
+  countries:
+    - AU
+  excluded_domains:
+    - mortgagepros.com.au
+    - shorefinancial.com.au
+    - everesthomeloans.com.au
+    - anz.com.au
+    - commbank.com.au
+    - nab.com.au
+    - westpac.com.au
+    - raywhite.com  # HQ only — individual offices are fine
+    - ljhooker.com  # HQ only — individual offices are fine
+
+icp_soft_preferences:
+  triggers_tier_1:
+    - new_agency_opened_last_6_months         # No broker panel yet — blank slate
+    - accountant_added_smsf_or_fp_services    # Moving into investment advice
+    - no_broker_partner_on_website            # Active gap to fill
+    - new_seek_job_posting_sales_agent        # Growing team = growing buyer pipeline
+    - recently_registered_abn_under_12_months # Building all referral relationships
+
+  triggers_tier_2:
+    - agent_running_facebook_instagram_ads    # Actively generating buyer leads
+    - accountant_posting_property_content_linkedin  # Already in property mindset
+    - agency_expanded_new_suburb_or_office    # Growth phase = needs new partners
+    - accountant_serves_property_heavy_industries   # Clients are buyers
+    - agency_principal_recently_changed       # New leadership reviewing all partnerships
+
+  personas_to_prioritize:
+    - Nepali-owned or multicultural real estate/accounting firms (highest trust fit)
+    - Independent boutique agencies over franchise offices
+    - Accountants with SMSF client base (property investor referrals)
+
+legal:
+  regulated_industry: true
+  governing_laws:
+    - NCCP Act (National Consumer Credit Protection Act)
+    - ASIC RG 234 (Advertising financial products)
+    - Australian Spam Act 2003
+    - Privacy Act 1988
+    - Best Interests Duty (BID) — effective March 2021
+  banned_words:
+    - guaranteed approval
+    - guaranteed loan
+    - best rate in Australia
+    - lowest rate
+    - no credit check
+    - instant approval
+    - same-day approval
+    - government approved
+    - we guarantee your loan will settle
+    - bad credit no problem
+    - unlimited borrowing
+  risky_phrases_rephrase:
+    - phrase: "best rates"
+      use_instead: "competitive rates across 40+ lenders"
+    - phrase: "we'll get you approved"
+      use_instead: "we'll find the right lender for your situation"
+    - phrase: "fast settlement"
+      use_instead: "we target 15–18 day settlements"
+    - phrase: "free service"
+      use_instead: "no cost to you — we're paid by the lender"
+  compliance_notes:
+    - Include credit licence number in every email footer
+    - Include working unsubscribe link on every email (Spam Act)
+    - Do not promise specific referral dollar amounts in cold outreach
+    - Do not mention data sourcing method — use neutral language ("I came across your practice...")
+    - AFCA membership is safe to mention as a trust signal
+    - Best Interests Duty — avoid copy implying you push specific lenders
+
+infrastructure_status:
+  domains_purchased: yes
+  inboxes_warmed_2_weeks: yes
+  smartlead_api_key: yes
+  prospeo_api_key: yes
+  millionverifier_api_key: yes
+
+created_at: 2026-06-21
