@@ -1,0 +1,15 @@
+job_title,company_name,location,date_posted,search_query,signal,campaign_track,signal_source,signal_tier,exclude,exclude_reason
+IT Manager,Hays Recruitment,Melbourne VIC,1 day ago,IT Manager,IT_MANAGER_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+IT Manager,Confidential,Sydney NSW,5 days ago,IT Manager,IT_MANAGER_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,NO_COMPANY_NAME
+IT Manager,Brennan IT,Sydney NSW,2 days ago,IT Manager,IT_MANAGER_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,IT_COMPANY
+IT Manager,Randstad,Melbourne VIC,3 days ago,IT Manager,IT_MANAGER_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+IT Support Officer,Michael Page,Melbourne VIC,1 day ago,IT Support Officer,IT_SUPPORT_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+IT Support Officer,Managed IT Solutions Pty Ltd,Perth WA,3 days ago,IT Support Officer,IT_SUPPORT_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,IT_COMPANY
+Systems Administrator,Hudson Staffing,Brisbane QLD,2 days ago,Systems Administrator,SYSADMIN_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+Help Desk Technician,Accenture,Sydney NSW,1 day ago,Help Desk Technician,HELPDESK_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,IT_COMPANY
+Network Administrator,Kelly Services,Melbourne VIC,1 day ago,Network Administrator,NETWORK_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+Network Administrator,Flagship Recruitment,Brisbane QLD,2 days ago,Network Administrator,NETWORK_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+IT Coordinator,People2People,Sydney NSW,1 day ago,IT Coordinator,IT_COORD_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+Head of IT,Macquarie Cloud Services,Sydney NSW,1 day ago,Head of IT,HEAD_IT_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,IT_COMPANY
+Head of IT,Adecco,Perth WA,1 day ago,Head of IT,HEAD_IT_HIRE,IT-CFO-AUS,SEEK_IT_HIRE,Tier 1,Yes,RECRUITER
+Cybersecurity Analyst,Invarosoft,Melbourne VIC,1 day ago,Cybersecurity Analyst,CYBER_HIRE,IT-CEO-AUS,SEEK_IT_HIRE,Tier 1,Yes,IT_COMPANY
