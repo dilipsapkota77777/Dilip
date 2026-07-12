@@ -1,0 +1,127 @@
+{
+  "_note": "IT Together — SEEK Signal Scraper Config",
+  "_actor": "Use actor: misceres/seek-scraper OR apify/seek-jobs-scraper on apify.com",
+  "_instructions": [
+    "1. Go to apify.com -> Sign up (free)",
+    "2. Search 'SEEK Jobs Scraper' in the Actor Store",
+    "3. Paste one search config below into the Input tab",
+    "4. Click Run -> wait 2-5 min -> Export as CSV",
+    "5. Repeat for each search query",
+    "6. Merge all CSVs into one sheet before importing to Clay"
+  ],
+
+  "searches": [
+    {
+      "run_name": "IT Manager AU",
+      "searchQuery": "IT Manager",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "IT_MANAGER_HIRE",
+      "campaign_route": "IT-CFO-AUS"
+    },
+    {
+      "run_name": "IT Support Officer AU",
+      "searchQuery": "IT Support Officer",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "IT_SUPPORT_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    },
+    {
+      "run_name": "Systems Administrator AU",
+      "searchQuery": "Systems Administrator",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "SYSADMIN_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    },
+    {
+      "run_name": "Help Desk Technician AU",
+      "searchQuery": "Help Desk Technician",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "HELPDESK_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    },
+    {
+      "run_name": "Network Administrator AU",
+      "searchQuery": "Network Administrator",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "NETWORK_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    },
+    {
+      "run_name": "IT Coordinator AU",
+      "searchQuery": "IT Coordinator",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "IT_COORD_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    },
+    {
+      "run_name": "Head of IT AU",
+      "searchQuery": "Head of IT",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "HEAD_IT_HIRE",
+      "campaign_route": "IT-CFO-AUS"
+    },
+    {
+      "run_name": "Cybersecurity Analyst AU",
+      "searchQuery": "Cybersecurity Analyst",
+      "location": "All Australia",
+      "datePosted": "30",
+      "workType": "Full time",
+      "maxItems": 200,
+      "signal": "CYBER_HIRE",
+      "campaign_route": "IT-CEO-AUS"
+    }
+  ],
+
+  "clean_rules": {
+    "remove_if_company_contains": [
+      "recruit", "staffing", "labour hire", "hays", "hudson", "robert half",
+      "manpower", "randstad", "people2people", "michael page", "adecco",
+      "kelly services", "talent", "Confidential"
+    ],
+    "remove_if_company_is_IT": [
+      "managed it", "managed services", "msp", "it solutions", "it services",
+      "cybersecurity solutions", "tech solutions", "technology solutions",
+      "cloud services", "it consulting", "digital solutions"
+    ],
+    "keep_headcount": "10-250",
+    "keep_work_type": "Full time only"
+  },
+
+  "clay_columns_to_add_after_import": [
+    "signal_source = SEEK_IT_HIRE",
+    "signal_date = [date of scrape]",
+    "signal_tier = Tier 1",
+    "job_title_signal = [the role they posted]",
+    "campaign_route = [from config above]"
+  ],
+
+  "expected_output": {
+    "raw_listings_per_run": "50-200 per search query",
+    "total_after_8_searches": "200-800 raw listings",
+    "after_cleaning_recruiter_IT": "100-400 unique companies",
+    "after_headcount_filter_10_to_250": "60-250 qualifying companies",
+    "email_find_rate_75pct": "45-188 sendable contacts",
+    "expected_meetings_5_to_8_per_100": "3-10 meetings from first run"
+  }
+}
