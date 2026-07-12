@@ -1,0 +1,191 @@
+business:
+  name: IT Together
+  website: https://ittogether.com.au/
+  one_liner: >
+    AI-driven managed IT, cybersecurity, and network services for Australian
+    businesses — proactive monitoring that prevents problems before they cost you.
+  tone: peer-to-peer professional
+  location: Sydney, NSW (national delivery — all of Australia)
+  unique_angle: AI-powered operations + proactive monitoring — not reactive break-fix IT support
+
+services:
+  - name: Managed IT
+    description: >
+      Full outsourced IT management — monitoring, patching, updates, helpdesk.
+      Proactive, not reactive.
+  - name: Managed Networks
+    description: >
+      Network infrastructure monitoring and management. Uptime-first approach.
+  - name: Cybersecurity
+    description: >
+      Threat detection, endpoint security, compliance-ready security posture.
+      Bundled with managed IT, not bolted on.
+  - name: IT Support & Consultancy
+    description: >
+      Helpdesk + strategic IT advice. Single point of contact for all IT needs.
+  - name: AI Operations
+    description: >
+      AI-driven workflow automation and IT process optimisation for modern businesses.
+
+offer:
+  pricing_model: Custom quotation (no public pricing)
+  entry_offer: Contact for a tailored solution
+  primary_cta_email: "Reply and I can run a quick IT cost comparison for your business size"
+  primary_cta_linkedin: "Happy to share what we're seeing with businesses like yours — worth 15 mins?"
+  lead_magnet_cfo: >
+    Free IT Cost Comparison — in-house IT hire vs managed IT at your headcount.
+    Covers salary, super, tools, cover, training vs flat monthly managed IT fee.
+  lead_magnet_cfo_cta: >
+    "Reply with your headcount and I'll put together a quick cost comparison —
+    no call needed. Takes me 10 minutes, useful for your next planning conversation."
+  lead_magnet_ceo: >
+    Free IT Risk Snapshot — 5-question audit of your current IT setup.
+    Identifies the top 3 risks that cause downtime and data loss for businesses your size.
+  lead_magnet_ceo_cta: >
+    "Reply and I'll send you our IT Risk Snapshot — 5 questions, takes 2 minutes,
+    tells you exactly where your exposure is."
+  lead_magnet_it_manager: >
+    Managed IT SLA Benchmark — how IT Together's response times and uptime SLAs
+    compare to industry standard. Useful for internal reporting or vendor reviews.
+  lead_magnet_it_manager_cta: >
+    "Reply and I'll send you our SLA benchmark doc — useful for comparing
+    against your current setup or presenting to leadership."
+  proof_points:
+    - "Response time SLA: faster than hiring and waiting on an internal IT queue"
+    - "Uptime: 99.9% target with proactive monitoring (catch issues before users notice)"
+    - "Cost: managed IT typically saves 30-50% vs full-time IT hire at 10-50 headcount"
+    - "AI-driven: automated monitoring flags issues before they become outages"
+
+campaign_tracks:
+  - id: track_a
+    name: CFO / Finance Director
+    angle: Cost savings vs in-house IT
+    hook: Free IT cost comparison (managed vs in-house)
+    sequence:
+      email_1: Do the Math — cost of IT hire vs managed IT at their headcount
+      email_2: Specific Outcome — uptime + response time SLA, what downtime actually costs
+      email_3: Peer Proof — how similar-size businesses switched + resource offer
+
+  - id: track_b
+    name: CEO / Managing Director
+    angle: Productivity + no-worry IT
+    hook: Free IT Risk Snapshot (5-question audit)
+    sequence:
+      email_1: Pattern Interrupt — "most CEOs don't think about IT until it's too late"
+      email_2: Challenge of Similar Companies — how businesses their size handle IT
+      email_3: Lower the friction — risk snapshot resource + soft ask
+
+  - id: track_c
+    name: IT Manager / Operations Manager
+    angle: Proactive partner, not reactive vendor
+    hook: SLA Benchmark doc
+    sequence:
+      email_1: Ask Before Pitch — how much time they spend on reactive firefighting
+      email_2: Show Cost — what reactive IT costs vs proactive managed model
+      email_3: Upfront Value — SLA benchmark doc + "worth comparing notes?"
+
+icp_hard_filters:
+  job_titles:
+    - CFO
+    - Chief Financial Officer
+    - Finance Director
+    - CEO
+    - Managing Director
+    - Founder
+    - Director
+    - IT Manager
+    - Head of IT
+    - IT Director
+    - Operations Manager
+    - General Manager
+  industries_in:
+    - Professional Services
+    - Legal
+    - Accounting / Finance
+    - Healthcare
+    - NDIS
+    - Construction
+    - Real Estate
+    - Manufacturing
+    - Recruitment
+    - Financial Services
+    - Insurance
+    - Education
+    - Retail (brick-and-mortar + online)
+  industries_out:
+    - Government / Public Sector
+    - Telcos
+    - Large enterprise IT companies
+  headcount_min: 10
+  headcount_max: 250
+  countries:
+    - AU
+  excluded_domains:
+    - ittogether.com.au
+
+icp_soft_preferences:
+  triggers_tier_1:
+    - hiring_it_role_on_seek           # In-market: considering in-house, intercept with cost comparison
+    - recent_cybersecurity_breach_news # Industry signal — fear trigger
+    - company_headcount_growth_30pct   # Growing fast = IT strain
+    - no_it_provider_mentioned_website # Gap to fill
+    - new_office_or_location_opened    # IT needs expanding
+
+  triggers_tier_2:
+    - cfo_recently_appointed           # New finance leader reviewing all vendor costs
+    - ceo_posted_about_tech_or_ai      # In-market mindset for AI operations angle
+    - company_recently_funded          # Growth capital = willing to invest in IT
+    - ops_manager_new_hire             # Taking ownership of vendor stack
+    - recent_negative_it_review_glassdoor # Pain signal — IT issues internally
+
+  atl_vs_btl:
+    atl: CEO, MD, CFO, Director (budget holders — strategic pitch)
+    btl: IT Manager, Operations Manager, Head of IT (technical buyers — tactical pitch)
+
+  personas_to_prioritize:
+    - CFO at 20-100 headcount businesses with no dedicated IT team
+    - CEO at SMBs currently using ad-hoc IT support or break-fix model
+    - Operations Managers at businesses where downtime = lost revenue (legal, finance, healthcare)
+
+value_props_by_persona:
+  cfo:
+    headline: "Managed IT costs less than a full-time IT hire — and covers more"
+    stat: "At 25 headcount, in-house IT hire = ~$90k salary + super + tools + cover. Managed IT = fraction of that, 24/7."
+    pain: "You're either overpaying for IT headcount or underserved by ad-hoc support"
+  ceo:
+    headline: "Your team loses hours when IT breaks. Ours makes sure it doesn't."
+    stat: "Average SMB loses 6-8 hours/month to IT issues. Proactive monitoring cuts that to near zero."
+    pain: "IT problems are invisible until they're urgent — then they cost you deals and reputation"
+  it_manager:
+    headline: "Stop firefighting. Start running IT strategically."
+    stat: "Reactive IT costs 3x more per issue than proactive monitoring + resolution."
+    pain: "You're spending 60%+ of your time on tickets instead of anything strategic"
+  ops_manager:
+    headline: "When IT goes down, your whole operation stops. We prevent that."
+    stat: "99.9% uptime SLA with proactive monitoring — issues caught before users notice."
+    pain: "Downtime isn't an IT problem — it's a revenue and reputation problem"
+
+differentiators_vs_competitors:
+  - AI-driven monitoring (proactive) vs traditional reactive break-fix
+  - Cybersecurity bundled in (not a separate engagement)
+  - Australia-wide service (not just local)
+  - Single point of contact — no ticket queues with unknown support staff
+  - AI Operations capability (future-proofs the client's IT investment)
+
+legal:
+  regulated_industry: false
+  compliance_notes:
+    - Include unsubscribe in all cold emails (Australian Spam Act 2003)
+    - Do not promise specific uptime % unless verified internally
+    - Do not claim specific cost savings without supporting data
+    - Avoid: "hack-proof", "100% secure", "zero risk" — no cybersecurity claim is absolute
+
+infrastructure_status:
+  domains_purchased: pending
+  inboxes_warmed: pending
+  smartlead_setup: pending
+  linkedin_campaign: pending
+
+created_at: 2026-07-12
+dgk_client: true
+campaign_type: linkedin_plus_email
