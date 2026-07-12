@@ -1,0 +1,80 @@
+business:
+  name: IT Together
+  website: https://ittogether.com.au/
+  location: Parramatta, NSW, Australia (national reach)
+  size: ~43 employees
+  model: Managed services retainer + project-based consulting
+  tagline: "AI-driven IT management — proactive, not reactive"
+
+services:
+  - Managed Network Services
+  - Managed Cybersecurity
+  - IT Support & Consultancy
+  - AI & Agentic Operations
+  - Cloud Connectivity (incl. AWS)
+  - Network Monitoring & Management
+  - Alternative Networking Solutions (Alt-Net)
+
+pricing:
+  model: Custom quotation (no public pricing)
+  likely_structure:
+    - Monthly managed service retainer
+    - Per-user / per-device agreements
+    - Project-based consulting for implementations
+
+icp:
+  titles:
+    - CEO
+    - Managing Director
+    - Operations Manager
+    - CFO
+    - IT Manager
+    - Head of Technology
+  industries:
+    - Professional Services (legal, accounting, financial planning)
+    - Healthcare & Allied Health
+    - Construction
+    - Recruitment
+    - Education & Training
+    - Manufacturing
+    - Any Australian SMB reliant on IT infrastructure
+  headcount_range: 10–200
+  revenue_range: $1M–$50M AUD
+  geography: Australia only
+  hard_filters:
+    - Must be Australian business
+    - Must be B2B
+    - Must rely on IT infrastructure (excludes micro/cash businesses)
+  excluded:
+    - Solopreneurs / micro-businesses (under 10 staff)
+    - Businesses with in-house IT teams of 5+ (they won't outsource)
+    - Government (long procurement cycles)
+
+pain_points:
+  - IT breaks at the worst possible moment — no proactive monitoring
+  - Can't find or afford a full-time IT Manager (SEEK signal)
+  - Cybersecurity incidents / fear of being breached
+  - Fragmented IT — multiple vendors, no single point of accountability
+  - Want to adopt AI tools but IT infrastructure isn't ready or secure
+  - Downtime is killing productivity and the business owner is the unofficial "IT guy"
+
+differentiators:
+  - AI-driven network management (unique vs traditional MSPs)
+  - Proactive 24/7 monitoring — detects issues before they become outages
+  - AI & Agentic Operations to automate routine IT tasks
+  - Integrated networking + cybersecurity + consulting under one provider
+  - Focus on resilience and visibility, not break/fix
+
+gaps_to_address:
+  - No published case studies or client metrics (weakens credibility in cold email)
+  - No lead magnet or free entry offer (creates friction — see lead-magnets.md)
+  - No industry-specific positioning (broad messaging hurts conversion)
+
+lead_magnet: Free Network & Security Assessment (see lead-magnets.md)
+
+infrastructure_status:
+  domains_purchased: yes
+  inboxes_warmed_2_weeks: yes
+  smartlead_api_key: yes
+  prospeo_api_key: yes
+  millionverifier_api_key: yes
