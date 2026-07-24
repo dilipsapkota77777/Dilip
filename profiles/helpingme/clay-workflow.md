@@ -187,6 +187,22 @@ if (tier === "Tier B") return "NDIS-DIRECTOR";
 return "NDIS-GENERAL";
 ```
 
+### 2i — Email A/B Variant Assignment
+
+**Column:** `email_variant`
+**Purpose:** Deterministically splits contacts 50/50 for Smartlead A/B testing — no randomness, reproducible.
+
+```javascript
+// Hash first + last name to get stable A/B assignment
+const name = String({{first_name}} || "") + String({{last_name}} || "");
+const seed = name.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+return seed % 2 === 0 ? "A" : "B";
+```
+
+**How to use in Smartlead:** Create two subject line variants per email. Filter your export — Variant A contacts go into Variant A campaign sequence, Variant B into Variant B. Or use Smartlead's native A/B test and use this column only for tracking which contacts got which variant.
+
+---
+
 ### 2h — Send Ready Gate
 
 **Column:** `send_ready`
@@ -378,6 +394,9 @@ Return ONLY the sentence. Nothing else.
 Step 0:  Filter CSV before import (qualify + NDIS yes only)
 Step 1:  Import to Clay
 Step 2:  Add all formula columns (0 credits) — run immediately
+         — clean_first_name, signal_tier, service_type_raw, participant_type_raw,
+           state, campaign_track, email_variant (NEW), final_email*, send_ready*
+         (* add after enrichment, not now)
 Step 3a: Claygent — headline_hook (conditional: headline not empty)
 Step 3b: Claygent — services_confirmed (conditional: service_type_raw = "General NDIS")
 Step 3c: Claygent — referral_fit (conditional: not Tier 3, domain not empty)
@@ -387,7 +406,7 @@ Step 6:  MillionVerifier (conditional: final_email not empty)
 Step 7:  GPT-4 Mini — personalized_opener (conditional: email valid, not competitor)
 Step 8:  Add formula: send_ready (last step)
 Step 9:  Filter to send_ready = true
-Step 10: Export Tier 1 first → Smartlead
+Step 10: Export Tier 1 first → Smartlead (include email_variant column for A/B tracking)
 ```
 
 ---
@@ -425,6 +444,7 @@ At $0.01–$0.02/credit: **~$11–$22 for the full list**
 | `participant_type_raw` | customVariable3 |
 | `headline_hook` | customVariable4 |
 | `state` | customVariable5 |
+| `email_variant` | customVariable6 |
 
 **In Smartlead email templates use:**
 - `{{firstName}}` — first name
