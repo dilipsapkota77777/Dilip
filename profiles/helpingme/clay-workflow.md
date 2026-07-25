@@ -187,7 +187,37 @@ if (tier === "Tier B") return "NDIS-DIRECTOR";
 return "NDIS-GENERAL";
 ```
 
-### 2i — Email A/B Variant Assignment
+### 2i — Email 3 Subject Line (Clayscript, 0 credits)
+
+**Column:** `subject_email3`
+**Purpose:** Personal, ultra-short subject for the day-9 call offer email. Different pattern for Tier A vs Tier B.
+
+```javascript
+const firstName = String({{clean_first_name}} || "").trim().toLowerCase();
+const company = String({{current_company}} || "").trim();
+const tier = String({{Position Tier}} || "").trim();
+const variant = String({{email_variant}} || "A");
+
+const shortCo = company.length > 15 ? company.split(/[\s,&]+/)[0] : company;
+const co = shortCo.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const patternsA_tierA = [`15 mins, ${firstName}?`, `worth it?`, `${firstName} — quick`, `one question`];
+const patternsA_tierB = [`15 mins?`, `worth a call?`, `quick one`, `one thing`];
+const patternsB = [`${co}?`, `${firstName} — worth it?`, `15 min this week?`, `following up`];
+
+const isTierA = tier === "Tier A";
+const basePatterns = isTierA ? patternsA_tierA : patternsA_tierB;
+const patterns = variant === "B" ? patternsB : basePatterns;
+
+const hash = company.split("").reduce((sum, c) => sum + c.charCodeAt(0), 0);
+return patterns[hash % patterns.length];
+```
+
+**Note on Email 2:** Email 2 does NOT get a subject column. In Smartlead, tick "Reply in thread" on Email 2's step — it automatically sends as `RE: [Email 1 subject]`. This keeps the conversation thread intact.
+
+---
+
+### 2j — Email A/B Variant Assignment
 
 **Column:** `email_variant`
 **Purpose:** Deterministically splits contacts 50/50 for Smartlead A/B testing — no randomness, reproducible.
@@ -203,7 +233,7 @@ return seed % 2 === 0 ? "A" : "B";
 
 ---
 
-### 2h — Send Ready Gate
+### 2k — Send Ready Gate
 
 **Column:** `send_ready`
 **Add LAST — after all enrichments complete**
@@ -231,6 +261,46 @@ return (hasEmail && isVerified && hasName && hasCompany && hasOpener && notCold)
 ## Step 3 — Claygent Prompts (Paid — Run Conditionally)
 
 Run these ONLY after formula columns are done. Model: GPT-4 Mini for all three.
+
+### Prompt 0 — Email 1 Subject Line (Two-Word Formula)
+
+**Column:** `subject_email1`
+**Credits:** ~1 per row
+**Conditional:** `{{current_company}}` is not empty
+**Run first** — before openers, before hooks. Subject line needs to be in Smartlead before any email body variables matter.
+
+```
+Write a two-word email subject line for a cold email to {{current_company}}, an NDIS provider.
+
+Their services: {{service_type_raw}}
+Their state: {{state}}
+
+Rules:
+- MUST be exactly 2 words
+- All lowercase, no punctuation
+- Relevant to participant acquisition, referral partnerships, or support coordinator relationships in NDIS
+- Creates mild curiosity — does NOT reveal what the email is about
+- No sales or buzz words: never use "sales", "outreach", "marketing", "partnership", "collaboration", "system", "solution", "services", "growth", "strategy"
+- Should feel like it was typed by someone who knows their sector
+
+Good examples:
+"participant flow" — relevant to what every NDIS provider cares about, reveals nothing
+"coordinator pipeline" — insider language
+"referral gap" — implies a problem, names nothing
+"care pipeline" — service-relevant but vague
+"allied pipeline" — for allied health providers specifically
+"sil waitlist" — hyper-relevant for SIL providers
+
+Never write:
+"referral system" — reveals the pitch
+"quick question" — massively overused cliché
+"more participants" — sounds like advertising
+"ndis outreach" — banned word
+
+Return ONLY the two-word subject line. Nothing else.
+```
+
+---
 
 ### Prompt A — LinkedIn Headline Hook
 
@@ -391,22 +461,38 @@ Return ONLY the sentence. Nothing else.
 ## Run Order Summary
 
 ```
-Step 0:  Filter CSV before import (qualify + NDIS yes only)
-Step 1:  Import to Clay
-Step 2:  Add all formula columns (0 credits) — run immediately
-         — clean_first_name, signal_tier, service_type_raw, participant_type_raw,
-           state, campaign_track, email_variant (NEW), final_email*, send_ready*
-         (* add after enrichment, not now)
-Step 3a: Claygent — headline_hook (conditional: headline not empty)
-Step 3b: Claygent — services_confirmed (conditional: service_type_raw = "General NDIS")
-Step 3c: Claygent — referral_fit (conditional: not Tier 3, domain not empty)
-Step 4:  Email waterfall — LeadMagic → Prospeo → Hunter → Apollo (conditional: Work Email empty)
-Step 5:  Add formula: final_email (merge waterfall + existing)
-Step 6:  MillionVerifier (conditional: final_email not empty)
-Step 7:  GPT-4 Mini — personalized_opener (conditional: email valid, not competitor)
-Step 8:  Add formula: send_ready (last step)
-Step 9:  Filter to send_ready = true
-Step 10: Export Tier 1 first → Smartlead (include email_variant column for A/B tracking)
+Step 0:   Filter CSV before import (qualify + NDIS yes only)
+
+Step 1:   Import to Clay
+
+Step 2:   Add ALL formula columns (0 credits) — run immediately:
+          clean_first_name, signal_tier, service_type_raw, participant_type_raw,
+          state, campaign_track, email_variant, subject_email3
+          (final_email and send_ready come later)
+
+Step 3:   GPT-4 Mini enrichments — run in this order:
+  3-Sub:  subject_email1     (all rows, conditional: company not empty)  ~1 credit
+  3a:     headline_hook      (conditional: headline not empty)            ~1 credit
+  3b:     dgk_opener         (all rows)                                   ~1 credit
+  3c:     dgk_ps_hook        (all rows)                                   ~1 credit
+  3d:     dgk_pain_line      (all rows)                                   ~1 credit
+  3e:     services_confirmed (conditional: service_type_raw = "General NDIS")  ~2 credits
+  3f:     referral_fit       (conditional: not Tier 3, domain not empty)  ~2 credits
+  3g:     dgk_pain_line_enriched (General NDIS rows only — overwrites 3d) ~4 credits
+
+Step 4:   Email waterfall — LeadMagic → Prospeo → Hunter → Apollo
+          (conditional: Work Email empty AND not Tier 3)
+
+Step 5:   Add formula: final_email (merge waterfall + existing Work Email)
+
+Step 6:   MillionVerifier (conditional: final_email not empty)
+
+Step 7:   Add formula: send_ready (last step — after all enrichments done)
+
+Step 8:   Filter to send_ready = true
+
+Step 9:   Export Tier 1 — Hot first → Smartlead
+          Include: all customVariable columns (1–9) + firstName + companyName + email
 ```
 
 ---
@@ -445,11 +531,26 @@ At $0.01–$0.02/credit: **~$11–$22 for the full list**
 | `headline_hook` | customVariable4 |
 | `state` | customVariable5 |
 | `email_variant` | customVariable6 |
+| `dgk_pain_line` | customVariable7 |
+| `subject_email1` | customVariable8 |
+| `subject_email3` | customVariable9 |
 
 **In Smartlead email templates use:**
 - `{{firstName}}` — first name
 - `{{companyName}}` — company
-- `{{customVariable1}}` — personalized opener (first sentence)
-- `{{customVariable2}}` — their service type
+- `{{customVariable1}}` — personalized opener (first sentence of Email 1 and Email 3)
+- `{{customVariable2}}` — their NDIS service type
 - `{{customVariable3}}` — participant type they serve
-- `{{customVariable4}}` — the headline hook (used in PS line)
+- `{{customVariable4}}` — PS hook line (end of Email 1)
+- `{{customVariable5}}` — state / geographic reference (Email 2)
+- `{{customVariable7}}` — pain observation (Email 2 first line)
+- `{{customVariable8}}` — Email 1 subject line field
+- `{{customVariable9}}` — Email 3 subject line field
+
+**Subject line setup in Smartlead:**
+
+| Email step | Subject field | How |
+|---|---|---|
+| Email 1 | `{{customVariable8}}` | Type this into the Smartlead subject field |
+| Email 2 | (leave blank) | Tick "Reply in thread" — Smartlead adds RE: automatically |
+| Email 3 | `{{customVariable9}}` | Type this into the Smartlead subject field |
