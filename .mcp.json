@@ -4,7 +4,7 @@
       "type": "http",
       "url": "https://mcp.apify.com",
       "headers": {
-        "Authorization": "Bearer ${APIFY_API_TOKEN}"
+        "Authorization": "Bearer ${apify_api_WXhPMrRqvkqfEwA7M4I45qa1O0ptUI47vqdG}"
       }
     }
   }
