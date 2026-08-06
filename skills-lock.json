@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "skills": {
+    "audit-swan": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/audit-swan/SKILL.md",
+      "computedHash": "f36e5b3d341408f0afc81821067a983fd6560960c6b7b194a5bd14f60b21887f"
+    },
+    "battlecard": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/battlecard/SKILL.md",
+      "computedHash": "4e3ae96ebf47e627773fda63aee03834936a99641e99a836c9196849f1660a1a"
+    },
+    "brief": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/brief/SKILL.md",
+      "computedHash": "667908473b75c75b18101a6dba96fb6961cf18d69a73738bfdca6ce13bfd2212"
+    },
+    "build-list": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/build-list/SKILL.md",
+      "computedHash": "1267f96eee8df6c77c1379dc59345d22f4c744f36306deb3c77e400b85561072"
+    },
+    "clear-my-desk": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/clear-my-desk/SKILL.md",
+      "computedHash": "798b7b5d1ea0fbc29ff4b06e46d1ff976eacb35bb6b831ab3ead26b6db0545fd"
+    },
+    "community-radar": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/community-radar/SKILL.md",
+      "computedHash": "6d4b5419fa00ab03b985a57cfdccb2a103cff48f39e9b286c9c1e329d51beb11"
+    },
+    "event-radar": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/event-radar/SKILL.md",
+      "computedHash": "21a71dcf2e318f8f343f38cabf80648853974e3a7db333153261964db7960478"
+    },
+    "handle-reply": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/handle-reply/SKILL.md",
+      "computedHash": "8f7139222fccbb741fdf2fa81436a2ce5793b90efd1475e1f9abd12b5d245f7e"
+    },
+    "icp": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/icp/SKILL.md",
+      "computedHash": "53a863a611b4542eb33111848dcd2b1b032f476314d78b28d271d82f3516c418"
+    },
+    "inbox-zero": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/inbox-zero/SKILL.md",
+      "computedHash": "c0b6d9074c9cedeba8d49b7a03de882005ff6f1a7474c2344ae945b83f21fd0c"
+    },
+    "map-contacts": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/map-contacts/SKILL.md",
+      "computedHash": "a6a0ada132b8c7270e04351e111f525312c12d812b15c1bbe563b144ab55c0f8"
+    },
+    "multi-thread-deals": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/multi-thread-deals/SKILL.md",
+      "computedHash": "f580c34045d3d69d576e201f236570f9a6e97dfad15a2fa404bffa274e63bf93"
+    },
+    "pipeline-review": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/pipeline-review/SKILL.md",
+      "computedHash": "ab7f3bbccb2ea379dab09c419e511b2c02020ebf6688156228cfdc837a4d43bf"
+    },
+    "post-radar": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/post-radar/SKILL.md",
+      "computedHash": "c656af1b2dd27f71f63b6a88a24ed1d23dca52a1e8b714b56d38305ca17a123e"
+    },
+    "reach-out": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/reach-out/SKILL.md",
+      "computedHash": "4f277d68889fd10bdb240a7fd73a3ab0aa8fefcfd497e709e29f62f0c4242f50"
+    },
+    "research": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/research/SKILL.md",
+      "computedHash": "d67be3bfdf69ea49b06f5775bf469daa2f8b62ce397083b7b687d6d322adcfa4"
+    },
+    "score": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/score/SKILL.md",
+      "computedHash": "af9ea1bf3aa0e6f04b317b1b669159755799fc358bf3a6516584aef2d73d1674"
+    },
+    "skillify": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/skillify/SKILL.md",
+      "computedHash": "c99759fb7bb63a10baa45369ed1c6c30bd0f739f94943b0d748ba98d5d5129f6"
+    },
+    "visitor-radar": {
+      "source": "swan-gtm/gtm-skills",
+      "sourceType": "github",
+      "skillPath": "skills/ido-goldberg/visitor-radar/SKILL.md",
+      "computedHash": "6a045dd90de0096b38348b71200476ae0b1c24c5d41dd49d842f1c355b1fbc35"
+    }
+  }
+}
