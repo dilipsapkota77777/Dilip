@@ -455,6 +455,18 @@ def main():
 
     master = pd.concat(raw_frames, ignore_index=True, sort=False)
 
+    # Integer columns must not round-trip as floats: a NaN anywhere promotes the
+    # column to float64 and pandas then writes "4520.0", which Postgres rejects
+    # on COPY into an integer column. Nullable Int64 writes "4520" and "".
+    for df, cols in (
+        (people, ["company_employee_total"]),
+        (companies, ["employee_total", "founded_in", "people_count",
+                     "support_coordinator_count", "people_with_email_count"]),
+    ):
+        for c in cols:
+            if c in df.columns:
+                df[c] = pd.to_numeric(df[c], errors="coerce").astype("Int64")
+
     people.to_csv(os.path.join(out, "people.csv"), index=False)
     companies.to_csv(os.path.join(out, "companies.csv"), index=False)
     master.to_csv(os.path.join(out, "master_combined.csv"), index=False)

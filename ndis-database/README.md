@@ -79,3 +79,25 @@ from `Employees` into `company_size`; the original is kept as `founded_raw` for 
 
 **`position_tier = 'none'`** means evaluated and did not qualify — distinct from NULL,
 which means never evaluated. 497 rows are explicitly `none`.
+
+## Pushing to Supabase
+
+```bash
+export SUPABASE_DB_URL='postgresql://postgres.<ref>:<password>@aws-0-<region>.pooler.supabase.com:5432/postgres'
+cd scripts && ./push_to_supabase.sh
+```
+
+Connection string: Supabase → Project Settings → Database → Connection string → URI.
+Use the **session** pooler (port 5432), not the transaction pooler (6543) — `\copy` needs it.
+The script is idempotent: schema uses `IF NOT EXISTS` and the load truncates first,
+so re-running it refreshes the data without duplicating rows.
+
+The full pipeline — schema, views, and both CSV loads — is verified against
+PostgreSQL 16 before shipping. Expected output:
+
+```
+ companies               |  1537
+ people                  |  3202
+ support coords w/ email |   323
+ ready to send           |   259
+```
